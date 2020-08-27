@@ -1,0 +1,74 @@
+{
+  "_pageSize": 25,
+  "_self": "http://192.168.21.106/ppm/rest/v1/ideas?filter=%28lastUpdatedDate+%3E+%272020-08-25T11%3A52%3A17%27%29&fields=lastUpdatedDate%2Ccode%2Cname%2Cdescription%2CisRequired%2CestimatedFinishDate%2CestimatedStartDate%2Cimpact%2Cdescription%2CestimatedCost%2Cpriority%2CbreakevenDate%2Cdependencies%2CestimatedBenefit%2Crisks%2CestimateType%2CgeneralNotes%2Cstatus",
+  "_totalCount": 2,
+  "_results": [
+    {
+      "isRequired": false,
+      "code": "CA-1",
+      "estimatedFinishDate": "2020-08-02T00:00:00",
+      "estimatedStartDate": "2020-08-01T00:00:00",
+      "impact": "impact on existing",
+      "description": "Analytics for ConnectALL",
+      "estimatedCost": {
+        "amount": "111.00",
+        "_type": "money",
+        "currency": "USD"
+      },
+      "priority": 10,
+      "breakevenDate": "2020-08-03T00:00:00",
+      "dependencies": "dependencies",
+      "estimatedBenefit": {
+        "amount": "222.00",
+        "_type": "money",
+        "currency": "USD"
+      },
+      "_internalId": 5000004,
+      "lastUpdatedDate": "2020-08-25T15:48:26",
+      "risks": "risks",
+      "estimateType": {
+        "displayValue": "Analytical",
+        "_type": "lookup",
+        "id": "2"
+      },
+      "generalNotes": null,
+      "name": "Analytics for ConnectALL",
+      "_self": "http://192.168.21.106/ppm/rest/v1/ideas/5000004",
+      "status": {
+        "displayValue": "Approved",
+        "_type": "lookup",
+        "id": "1"
+      }
+    },
+    {
+      "isRequired": false,
+      "code": "CA-2",
+      "estimatedFinishDate": null,
+      "estimatedStartDate": null,
+      "impact": null,
+      "description": null,
+      "estimatedCost": null,
+      "priority": 10,
+      "breakevenDate": null,
+      "dependencies": null,
+      "estimatedBenefit": null,
+      "_internalId": 5000005,
+      "lastUpdatedDate": "2020-08-25T11:52:43",
+      "risks": null,
+      "estimateType": {
+        "displayValue": "Analytical",
+        "_type": "lookup",
+        "id": "2"
+      },
+      "generalNotes": null,
+      "name": "ConnectALL Insighes",
+      "_self": "http://192.168.21.106/ppm/rest/v1/ideas/5000005",
+      "status": {
+        "displayValue": "Unapproved",
+        "_type": "lookup",
+        "id": "0"
+      }
+    }
+  ],
+  "_recordsReturned": 2
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "operation ": "shift ",
+    "spec ": {
+      "_internalId ": "id "
+    }
+  },
+  {
+    "operation ": "modify-overwrite-beta ",
+    "spec ": {
+      "id ": "=toString "
+    }
+  }
+]

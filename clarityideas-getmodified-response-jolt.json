@@ -1,0 +1,62 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "_results": {
+        "*": {
+          "_internalId": "result.[&1].id",
+          "*": {
+            "id": "result.[&2].fields.&(1)",
+            "amount": "result.[&2].fields.&(1)",
+            "\\\\_self": "result.[&2].fields.&(1)",
+            "@": "result.[&2].fields.&"
+          }
+        }
+      },
+      "_totalCount": "totalrecords"
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "result": {
+        "*": {
+          "fields": {
+            "*": "=lastElement(@(1,&))"
+          }
+        }
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "result": {
+        "*": {
+          "fields": {
+            "*": "=toString"
+          },
+          "id": "=toString"
+        }
+      }
+    }
+  },
+  {
+    "operation": "remove",
+    "spec": {
+      "result": {
+        "*": {
+          "fields": {
+            "_links": ""
+          }
+        }
+      }
+    }
+  },
+  {
+    "operation": "default",
+    "spec": {
+      "result": []
+    }
+  }
+]

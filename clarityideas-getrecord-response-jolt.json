@@ -1,0 +1,39 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "_internalId": "id",
+      "*": {
+        "id": "fields.&(1)",
+        "amount": "fields.&(1)",
+        "\\\\_self": "fields.&(1)",
+        "@": "fields.&"
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "fields": {
+        "*": "=lastElement(@(1,&))"
+      }
+    }
+  },
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "fields": {
+        "*": "=toString"
+      },
+      "id": "=toString"
+    }
+  },
+  {
+    "operation": "remove",
+    "spec": {
+      "fields": {
+        "_links": ""
+      }
+    }
+  }
+]

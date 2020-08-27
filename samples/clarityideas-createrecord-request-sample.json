@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "summary": "Test for API creation 2",
+    "description": "Test for API creation 2",
+    "priority": "1",
+    "modifiedTime": "01-04-2019 11:46:30.124",
+    "severity": "2",
+    "status": "Open"
+  }
+}

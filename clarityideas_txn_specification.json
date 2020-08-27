@@ -1,0 +1,140 @@
+[
+  {
+    "schemeId": 5,
+    "schemeName": "Ideas",
+    "adapterType": "clarityideas",
+    "group": null,
+    "active": true,
+    "adapterMetadataList": [
+      {
+        "metadataId": 13,
+        "metadataKey": "issueType",
+        "metadataValue": "ideas"
+      }
+    ],
+    "requestHeaders": [],
+    "restTemplates": {
+      "UPDATE_RECORD": {
+        "templateId": 19,
+        "operation": "UPDATE_RECORD",
+        "httpVerb": "PATCH",
+        "restUrl": "/ppm/rest/v1/ideas/${recordId}",
+        "specifications": {
+          "Response": {
+            "specId": 33,
+            "type": "Response",
+            "adapterType": null,
+            "specType": "JOLT",
+            "status": "Active",
+            "specification": "[{\n    \"operation\": \"shift\",\n    \"spec\": { \"_internalId\": \"id\" }\n},\n  {\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": { \"id\": \"=toString\" }\n}]\n",
+            "samplePayload": "{\n    \"_internalId\": 5000004,\n    \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000004\"\n}",
+            "statusCode": 2,
+            "contentAvailable": true
+          },
+          "Request": {
+            "specId": 34,
+            "type": "Request",
+            "adapterType": null,
+            "specType": "JOLT",
+            "status": "Active",
+            "specification": "[{\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": {\n      \"fields\": {\n        \"id\": \"=toInteger\"\n      }\n    }\n},\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"fields\": {\n        \"id\": \"_internalId\",\n        \"*\": \"&\"\n      }\n    }\n}\n  ]\n",
+            "samplePayload": "{\n  \"id\": \"TP-4\",\n  \"fields\": {\n    \"summary\": \"Test for API creation 2\",\n    \"description\": \"Test for API creation 2\",\n    \"assignee\": \"admin\",\n    \"priority\": \"1\",\n    \"reporter\": \"admin\",\n   \"id\":\"798798\"\n  }\n}",
+            "statusCode": 2,
+            "contentAvailable": true
+          }
+        }
+      },
+      "QUERY_MODIFIED_RECORDS": {
+        "templateId": 17,
+        "operation": "QUERY_MODIFIED_RECORDS",
+        "httpVerb": "GET",
+        "restUrl": "/ppm/rest/v1/${issueType}?filter=(lastUpdatedDate%20%3E%20'${last-modified-time}')&fields=lastUpdatedDate,code,name,description,isRequired,estimatedFinishDate,estimatedStartDate,impact,description,estimatedCost,priority,breakevenDate,dependencies,estimatedBenefit,risks,estimateType,generalNotes,status,objective,projectType,costType,dependencies,technologyCompliance,isFastTrack,regulatoryCompliance,estimateType,projectCategory,businessUnitPriority,corporatePriority,ideaPriority,description,workStatus",
+        "specifications": {
+          "Response": {
+            "specId": 37,
+            "type": "Response",
+            "adapterType": null,
+            "specType": "JOLT",
+            "status": "Active",
+            "specification": "[\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"_results\": {\n        \"*\": {\n          \"_internalId\": \"result.[&1].id\",\n          \"*\": {\n            \"id\": \"result.[&2].fields.&(1)\",\n            \"amount\": \"result.[&2].fields.&(1)\",\n            \"\\\\_self\": \"result.[&2].fields.&(1)\",\n            \"@\": \"result.[&2].fields.&\"\n          }\n        }\n      },\n      \"_totalCount\": \"totalrecords\"\n    }\n  },\n  {\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": {\n      \"result\": {\n        \"*\": {\n          \"fields\": {\n            \"*\": \"=lastElement(@(1,&))\"\n          }\n        }\n      }\n    }\n  },\n  {\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": {\n      \"result\": {\n        \"*\": {\n          \"fields\": {\n            \"*\": \"=toString\"\n          },\n          \"id\": \"=toString\"\n        }\n      }\n    }\n  },\n  {\n    \"operation\": \"remove\",\n    \"spec\": {\n      \"result\": {\n        \"*\": {\n          \"fields\": {\n            \"_links\": \"\"\n          }\n        }\n      }\n    }\n  },\n  {\n    \"operation\": \"default\",\n    \"spec\": {\n      \"result\": []\n    }\n }\n]\n",
+            "samplePayload": "{\n    \"_pageSize\": 25,\n    \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas?filter=%28lastUpdatedDate+%3E+%272020-08-25T11%3A52%3A17%27%29&fields=lastUpdatedDate%2Ccode%2Cname%2Cdescription%2CisRequired%2CestimatedFinishDate%2CestimatedStartDate%2Cimpact%2Cdescription%2CestimatedCost%2Cpriority%2CbreakevenDate%2Cdependencies%2CestimatedBenefit%2Crisks%2CestimateType%2CgeneralNotes%2Cstatus\",\n    \"_totalCount\": 2,\n    \"_results\": [\n        {\n            \"isRequired\": false,\n            \"code\": \"CA-1\",\n            \"estimatedFinishDate\": \"2020-08-02T00:00:00\",\n            \"estimatedStartDate\": \"2020-08-01T00:00:00\",\n            \"impact\": \"impact on existing\",\n            \"description\": \"Analytics for ConnectALL\",\n            \"estimatedCost\": {\n                \"amount\": \"111.00\",\n                \"_type\": \"money\",\n                \"currency\": \"USD\"\n            },\n            \"priority\": 10,\n            \"breakevenDate\": \"2020-08-03T00:00:00\",\n            \"dependencies\": \"dependencies\",\n            \"estimatedBenefit\": {\n                \"amount\": \"222.00\",\n                \"_type\": \"money\",\n                \"currency\": \"USD\"\n            },\n            \"_internalId\": 5000004,\n            \"lastUpdatedDate\": \"2020-08-25T15:48:26\",\n            \"risks\": \"risks\",\n            \"estimateType\": {\n                \"displayValue\": \"Analytical\",\n                \"_type\": \"lookup\",\n                \"id\": \"2\"\n            },\n            \"generalNotes\": null,\n            \"name\": \"Analytics for ConnectALL\",\n            \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000004\",\n            \"status\": {\n                \"displayValue\": \"Approved\",\n                \"_type\": \"lookup\",\n                \"id\": \"1\"\n            }\n        },\n        {\n            \"isRequired\": false,\n            \"code\": \"CA-2\",\n            \"estimatedFinishDate\": null,\n            \"estimatedStartDate\": null,\n            \"impact\": null,\n            \"description\": null,\n            \"estimatedCost\": null,\n            \"priority\": 10,\n            \"breakevenDate\": null,\n            \"dependencies\": null,\n            \"estimatedBenefit\": null,\n            \"_internalId\": 5000005,\n            \"lastUpdatedDate\": \"2020-08-25T11:52:43\",\n            \"risks\": null,\n            \"estimateType\": {\n                \"displayValue\": \"Analytical\",\n                \"_type\": \"lookup\",\n                \"id\": \"2\"\n            },\n            \"generalNotes\": null,\n            \"name\": \"ConnectALL Insighes\",\n            \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000005\",\n            \"status\": {\n                \"displayValue\": \"Unapproved\",\n                \"_type\": \"lookup\",\n                \"id\": \"0\"\n            }\n        }\n    ],\n    \"_recordsReturned\": 2\n}",
+            "statusCode": 2,
+            "contentAvailable": true
+          },
+          "Request": {
+            "specId": 38,
+            "type": "Request",
+            "adapterType": null,
+            "specType": null,
+            "status": "Active",
+            "specification": null,
+            "samplePayload": null,
+            "statusCode": 2,
+            "contentAvailable": false
+          }
+        }
+      },
+      "CREATE_RECORD": {
+        "templateId": 20,
+        "operation": "CREATE_RECORD",
+        "httpVerb": "POST",
+        "restUrl": "/ppm/rest/v1/ideas",
+        "specifications": {
+          "Response": {
+            "specId": 35,
+            "type": "Response",
+            "adapterType": null,
+            "specType": "JOLT",
+            "status": "Active",
+            "specification": "[{\n    \"operation\": \"shift\",\n    \"spec\": { \"_internalId\": \"id\" }\n},\n  {\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": { \"id\": \"=toString\" }\n}]\n",
+            "samplePayload": "{\n    \"_internalId\": 5000004,\n    \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000004\"\n}",
+            "statusCode": 2,
+            "contentAvailable": true
+          },
+          "Request": {
+            "specId": 36,
+            "type": "Request",
+            "adapterType": null,
+            "specType": "JOLT",
+            "status": "Active",
+            "specification": "[{ \"operation\": \"shift\", \"spec\": { \"fields\": { \"*\": \"&\" } } }]\n",
+            "samplePayload": "{\n  \"fields\": {\n    \"summary\": \"Test for API creation 2\",\n    \"description\": \"Test for API creation 2\",\n    \"priority\": \"1\",\n    \"modifiedTime\": \"01-04-2019 11:46:30.124\",\n    \"severity\": \"2\",\n    \"status\": \"Open\"\n  }\n}",
+            "statusCode": 2,
+            "contentAvailable": true
+          }
+        }
+      },
+      "QUERY_RECORD_BY_ID": {
+        "templateId": 18,
+        "operation": "QUERY_RECORD_BY_ID",
+        "httpVerb": "GET",
+        "restUrl": "/ppm/rest/v1/ideas/${recordId}",
+        "specifications": {
+          "Response": {
+            "specId": 39,
+            "type": "Response",
+            "adapterType": null,
+            "specType": "JOLT",
+            "status": "Active",
+            "specification": "[\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"_internalId\": \"id\",\n      \"*\": {\n        \"id\": \"fields.&(1)\",\n        \"amount\":\"fields.&(1)\",\n        \"\\\\_self\": \"fields.&(1)\",\n        \"@\": \"fields.&\"\n      }\n    }\n  },\n  {\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": {\n      \"fields\": {\n        \"*\": \"=lastElement(@(1,&))\"\n      }\n    }\n  },\n  {\n    \"operation\": \"modify-overwrite-beta\",\n    \"spec\": {\n      \"fields\": {\n        \"*\": \"=toString\"\n      },\n      \"id\": \"=toString\"\n    }\n  },\n  {\n    \"operation\": \"remove\",\n    \"spec\": {\n      \"fields\": {\n        \"_links\": \"\"\n      }\n    }\n  }\n]\n",
+            "samplePayload": "{\n    \"planBenefitFinishDate\": null,\n    \"isOpenForTimeEntry\": true,\n    \"estimatedFinishDate\": \"2020-08-02T00:00:00\",\n    \"departmentCode\": null,\n    \"planIRR\": null,\n    \"systemCostOfCapitalRate\": 0,\n    \"conversionDate\": null,\n    \"budgetPaybackPeriod\": null,\n    \"costType\": {\n        \"displayValue\": \"Operating\",\n        \"_type\": \"lookup\",\n        \"id\": \"OPERATING\"\n    },\n    \"budgetCostFinish\": null,\n    \"initialInvestment\": null,\n    \"tasks\": {\n        \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000004/tasks\"\n    },\n    \"goal\": null,\n    \"teams\": {\n        \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000004/teams\"\n    },\n    \"planCostStartDate\": null,\n    \"impact\": \"impact on existing\",\n    \"estimatedCost\": {\n        \"amount\": \"111.00\",\n        \"_type\": \"money\",\n        \"currency\": \"USD\"\n    },\n    \"priority\": 10,\n    \"budgetCapitalPercent\": null,\n    \"dependencies\": \"dependencies\",\n    \"isBudgetEqualsPlanned\": true,\n    \"generalNotes\": null,\n    \"budgetOperatingPercent\": null,\n    \"locationCode\": null,\n    \"blueprintActiveId\": {\n        \"displayValue\": \"Standard Idea\",\n        \"_type\": \"lookup\",\n        \"id\": \"6\"\n    },\n    \"status\": {\n        \"displayValue\": \"Approved\",\n        \"_type\": \"lookup\",\n        \"id\": \"1\"\n    },\n    \"expenseRateMatrix\": null,\n    \"_internalId\": 5000004,\n    \"budgetBenefitStartDate\": null,\n    \"systemReinvestmentRate\": 0,\n    \"scheduleStart\": \"2020-08-25T11:51:54\",\n    \"slaCompliance\": null,\n    \"_self\": \"http://192.168.21.106/ppm/rest/v1/ideas/5000004\",\n    \"isApproved\": true,\n    \"materialExchangeRateType\": {\n        \"displayValue\": \"Average\",\n        \"_type\": \"lookup\",\n        \"id\": \"AVERAGE\"\n    },\n    \"approver\": {\n        \"displayValue\": \"Administrator, PPM\",\n        \"_type\": \"lookup\",\n        \"id\": \"1\"\n    },\n    \"purgeFlag\": false,\n    \"equipmentExchangeRateType\": {\n        \"displayValue\": \"Average\",\n        \"_type\": \"lookup\",\n        \"id\": \"AVERAGE\"\n    },\n    \"manager\": null,\n    \"equipmentCostMatrix\": null,\n    \"planBreakevenDate\": null,\n    \"planROI\": null,\n    \"estimatedBenefit\": {\n        \"amount\": \"222.00\",\n        \"_type\": \"money\",\n        \"currency\": \"USD\"\n    },\n    \"estimateType\": {\n        \"displayValue\": \"Analytical\",\n        \"_type\": \"lookup\",\n        \"id\": \"2\"\n    },\n    \"originatingRequestor\": {\n        \"displayValue\": \"Administrator, PPM\",\n        \"_type\": \"lookup\",\n        \"id\": \"1\"\n    },\n    \"planCapitalPercent\": null,\n    \"createdDate\": \"2020-08-25T11:51:54\",\n    \"stage\": null,\n    \"eacLabor\": 0,\n    \"planCostTotal\": null,\n    \"budgetIRR\": null,\n    \"progress\": {\n        \"displayValue\": \"Not Started\",\n        \"_type\": \"lookup\",\n        \"id\": \"0\"\n    },\n    \"budgetMIRR\": null,\n    \"planOperatingTotal\": null,\n    \"currencyCode\": {\n        \"displayValue\": \"USD\",\n        \"_type\": \"lookup\",\n        \"id\": \"USD\"\n    },\n    \"equipmentRateMatrix\": null,\n    \"businessUnit\": null,\n    \"statusIndicator\": null,\n    \"planNPV\": null,\n    \"_links\": {\n        \"targetManager\": \"http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_PROJMGR/lookupValues\",\n        \"equipmentRateMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"statusIndicator\": \"http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_STATUS_INDICATOR/lookupValues\",\n        \"expenseRateMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"ideaPriority\": \"http://192.168.21.106/ppm/rest/v1/lookups/IDEAS_PRIORITY/lookupValues\",\n        \"departmentCode\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_PARAM_DEPT_CODE/lookupValues\",\n        \"laborExchangeRateType\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues\",\n        \"laborCostMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"costType\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_FIN_COSTTYPECODE/lookupValues\",\n        \"materialExchangeRateType\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues\",\n        \"approver\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_RESOURCES/lookupValues\",\n        \"goal\": \"http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_GOAL_TYPE/lookupValues\",\n        \"equipmentExchangeRateType\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues\",\n        \"manager\": \"http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_PROJMGR/lookupValues\",\n        \"resOBSUnit\": \"http://192.168.21.106/ppm/rest/v1/lookups/OBS_BROWSE_FLT_RES/lookupValues\",\n        \"equipmentCostMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"blueprintId\": \"http://192.168.21.106/ppm/rest/v1/lookups/BLP_BLUEPRINTS/lookupValues\",\n        \"assignmentPool\": \"http://192.168.21.106/ppm/rest/v1/lookups/ASSGN_POOL_TYPE/lookupValues\",\n        \"expenseCostMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"expenseExchangeRateType\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues\",\n        \"estimateType\": \"http://192.168.21.106/ppm/rest/v1/lookups/IDEAS_EST_TYPE/lookupValues\",\n        \"originatingRequestor\": \"http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_PROJMGR/lookupValues\",\n        \"trackMode\": \"http://192.168.21.106/ppm/rest/v1/lookups/prTrackMode/lookupValues\",\n        \"stage\": \"http://192.168.21.106/ppm/rest/v1/lookups/INV_STAGE_TYPE/lookupValues\",\n        \"materialCostMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"laborRateMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"progress\": \"http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_OBJ_PROGRESS/lookupValues\",\n        \"investmentType\": \"http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_INV_EXTENDED_OBJECTS/lookupValues\",\n        \"locationCode\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_PARAM_LOC_ID/lookupValues\",\n        \"materialRateMatrix\": \"http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues\",\n        \"currencyCode\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_ACTIVE_CURRENCIES/lookupValues\",\n        \"blueprintActiveId\": \"http://192.168.21.106/ppm/rest/v1/lookups/BLP_BLUEPRINTS/lookupValues\",\n        \"status\": \"http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_OBJ_STATUS/lookupValues\",\n        \"chargeCode\": \"http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_CHARGE_CODES/lookupValues\"\n    },\n    \"laborExchangeRateType\": {\n        \"displayValue\": \"Average\",\n        \"_type\": \"lookup\",\n        \"id\": \"AVERAGE\"\n    },\n    \"etcLabor\": 0,\n    \"calcFinMetrics\": true,\n    \"isActive\": true,\n    \"breakevenDate\": \"2020-08-03T00:00:00\",\n    \"planBenefitTotal\": null,\n    \"overrideCostOfCapitalRate\": 0,\n    \"budgetBenefitFinishDate\": null,\n    \"statusComment\": null,\n    \"actualLabor\": 0,\n    \"budgetOperatingTotal\": null,\n    \"lastUpdatedBy\": \"Administrator, PPM\",\n    \"isRequired\": false,\n    \"preventUnassignedTask\": false,\n    \"resOBSUnit\": null,\n    \"estimatedStartDate\": \"2020-08-01T00:00:00\",\n    \"budgetBreakevenDate\": null,\n    \"totalLaborEffort\": 0,\n    \"planOperatingPercent\": null,\n    \"benefitDescription\": null,\n    \"materialCostMatrix\": null,\n    \"name\": \"Analytics for ConnectALL\",\n    \"alignment\": null,\n    \"chargeCode\": null,\n    \"targetManager\": null,\n    \"planPaybackPeriod\": null,\n    \"code\": \"CA-1\",\n    \"ideaPriority\": {\n        \"displayValue\": \"Medium\",\n        \"_type\": \"lookup\",\n        \"id\": \"2\"\n    },\n    \"description\": \"Analytics for ConnectALL\",\n    \"setPlanCostDates\": false,\n    \"laborCostMatrix\": null,\n    \"budgetBenefitTotal\": null,\n    \"overrideReinvestmentRate\": 0,\n    \"budgetROI\": null,\n    \"isSysCostOfCapital\": true,\n    \"isSysReinvRate\": true,\n    \"planCostFinishDate\": null,\n    \"planBenefitStartDate\": null,\n    \"planMIRR\": null,\n    \"scheduleFinish\": \"2020-08-25T11:51:54\",\n    \"budgetCostStart\": null,\n    \"entityId\": null,\n    \"blueprintId\": null,\n    \"assignmentPool\": {\n        \"displayValue\": \"Team Only\",\n        \"_type\": \"lookup\",\n        \"id\": \"0\"\n    },\n    \"expenseCostMatrix\": null,\n    \"expenseExchangeRateType\": {\n        \"displayValue\": \"Average\",\n        \"_type\": \"lookup\",\n        \"id\": \"AVERAGE\"\n    },\n    \"planCapitalTotal\": null,\n    \"budgetCostTotal\": null,\n    \"lastUpdatedDate\": \"2020-08-25T16:37:22\",\n    \"trackMode\": {\n        \"displayValue\": \"PPM\",\n        \"_type\": \"lookup\",\n        \"id\": \"2\"\n    },\n    \"risks\": \"risks\",\n    \"laborRateMatrix\": null,\n    \"createdBy\": \"Administrator, PPM\",\n    \"risk\": null,\n    \"investmentType\": {\n        \"displayValue\": \"Idea\",\n        \"_type\": \"lookup\",\n        \"id\": \"idea\"\n    },\n    \"budgetCapitalTotal\": null,\n    \"materialRateMatrix\": null,\n    \"budgetNPV\": null\n}",
+            "statusCode": 2,
+            "contentAvailable": true
+          },
+          "Request": {
+            "specId": 40,
+            "type": "Request",
+            "adapterType": null,
+            "specType": null,
+            "status": "Active",
+            "specification": null,
+            "samplePayload": null,
+            "statusCode": 2,
+            "contentAvailable": false
+          }
+        }
+      }
+    },
+    "default": false
+  }
+]

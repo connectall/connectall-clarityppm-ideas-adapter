@@ -1,0 +1,11 @@
+{
+  "id": "TP-4",
+  "fields": {
+    "summary": "Test for API creation 2",
+    "description": "Test for API creation 2",
+    "assignee": "admin",
+    "priority": "1",
+    "reporter": "admin",
+    "id": "798798"
+  }
+}

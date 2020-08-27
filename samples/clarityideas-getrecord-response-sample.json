@@ -1,0 +1,231 @@
+{
+  "planBenefitFinishDate": null,
+  "isOpenForTimeEntry": true,
+  "estimatedFinishDate": "2020-08-02T00:00:00",
+  "departmentCode": null,
+  "planIRR": null,
+  "systemCostOfCapitalRate": 0,
+  "conversionDate": null,
+  "budgetPaybackPeriod": null,
+  "costType": {
+    "displayValue": "Operating",
+    "_type": "lookup",
+    "id": "OPERATING"
+  },
+  "budgetCostFinish": null,
+  "initialInvestment": null,
+  "tasks": {
+    "_self": "http://192.168.21.106/ppm/rest/v1/ideas/5000004/tasks"
+  },
+  "goal": null,
+  "teams": {
+    "_self": "http://192.168.21.106/ppm/rest/v1/ideas/5000004/teams"
+  },
+  "planCostStartDate": null,
+  "impact": "impact on existing",
+  "estimatedCost": {
+    "amount": "111.00",
+    "_type": "money",
+    "currency": "USD"
+  },
+  "priority": 10,
+  "budgetCapitalPercent": null,
+  "dependencies": "dependencies",
+  "isBudgetEqualsPlanned": true,
+  "generalNotes": null,
+  "budgetOperatingPercent": null,
+  "locationCode": null,
+  "blueprintActiveId": {
+    "displayValue": "Standard Idea",
+    "_type": "lookup",
+    "id": "6"
+  },
+  "status": {
+    "displayValue": "Approved",
+    "_type": "lookup",
+    "id": "1"
+  },
+  "expenseRateMatrix": null,
+  "_internalId": 5000004,
+  "budgetBenefitStartDate": null,
+  "systemReinvestmentRate": 0,
+  "scheduleStart": "2020-08-25T11:51:54",
+  "slaCompliance": null,
+  "_self": "http://192.168.21.106/ppm/rest/v1/ideas/5000004",
+  "isApproved": true,
+  "materialExchangeRateType": {
+    "displayValue": "Average",
+    "_type": "lookup",
+    "id": "AVERAGE"
+  },
+  "approver": {
+    "displayValue": "Administrator, PPM",
+    "_type": "lookup",
+    "id": "1"
+  },
+  "purgeFlag": false,
+  "equipmentExchangeRateType": {
+    "displayValue": "Average",
+    "_type": "lookup",
+    "id": "AVERAGE"
+  },
+  "manager": null,
+  "equipmentCostMatrix": null,
+  "planBreakevenDate": null,
+  "planROI": null,
+  "estimatedBenefit": {
+    "amount": "222.00",
+    "_type": "money",
+    "currency": "USD"
+  },
+  "estimateType": {
+    "displayValue": "Analytical",
+    "_type": "lookup",
+    "id": "2"
+  },
+  "originatingRequestor": {
+    "displayValue": "Administrator, PPM",
+    "_type": "lookup",
+    "id": "1"
+  },
+  "planCapitalPercent": null,
+  "createdDate": "2020-08-25T11:51:54",
+  "stage": null,
+  "eacLabor": 0,
+  "planCostTotal": null,
+  "budgetIRR": null,
+  "progress": {
+    "displayValue": "Not Started",
+    "_type": "lookup",
+    "id": "0"
+  },
+  "budgetMIRR": null,
+  "planOperatingTotal": null,
+  "currencyCode": {
+    "displayValue": "USD",
+    "_type": "lookup",
+    "id": "USD"
+  },
+  "equipmentRateMatrix": null,
+  "businessUnit": null,
+  "statusIndicator": null,
+  "planNPV": null,
+  "_links": {
+    "targetManager": "http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_PROJMGR/lookupValues",
+    "equipmentRateMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "statusIndicator": "http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_STATUS_INDICATOR/lookupValues",
+    "expenseRateMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "ideaPriority": "http://192.168.21.106/ppm/rest/v1/lookups/IDEAS_PRIORITY/lookupValues",
+    "departmentCode": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_PARAM_DEPT_CODE/lookupValues",
+    "laborExchangeRateType": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues",
+    "laborCostMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "costType": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_FIN_COSTTYPECODE/lookupValues",
+    "materialExchangeRateType": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues",
+    "approver": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_RESOURCES/lookupValues",
+    "goal": "http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_GOAL_TYPE/lookupValues",
+    "equipmentExchangeRateType": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues",
+    "manager": "http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_PROJMGR/lookupValues",
+    "resOBSUnit": "http://192.168.21.106/ppm/rest/v1/lookups/OBS_BROWSE_FLT_RES/lookupValues",
+    "equipmentCostMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "blueprintId": "http://192.168.21.106/ppm/rest/v1/lookups/BLP_BLUEPRINTS/lookupValues",
+    "assignmentPool": "http://192.168.21.106/ppm/rest/v1/lookups/ASSGN_POOL_TYPE/lookupValues",
+    "expenseCostMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "expenseExchangeRateType": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_EXCHANGE_RATE_TYPE/lookupValues",
+    "estimateType": "http://192.168.21.106/ppm/rest/v1/lookups/IDEAS_EST_TYPE/lookupValues",
+    "originatingRequestor": "http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_PROJMGR/lookupValues",
+    "trackMode": "http://192.168.21.106/ppm/rest/v1/lookups/prTrackMode/lookupValues",
+    "stage": "http://192.168.21.106/ppm/rest/v1/lookups/INV_STAGE_TYPE/lookupValues",
+    "materialCostMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "laborRateMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "progress": "http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_OBJ_PROGRESS/lookupValues",
+    "investmentType": "http://192.168.21.106/ppm/rest/v1/lookups/BROWSE_INV_EXTENDED_OBJECTS/lookupValues",
+    "locationCode": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_PARAM_LOC_ID/lookupValues",
+    "materialRateMatrix": "http://192.168.21.106/ppm/rest/v1/lookups/CBK_RATE_MATRIX_BROWSE/lookupValues",
+    "currencyCode": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_ACTIVE_CURRENCIES/lookupValues",
+    "blueprintActiveId": "http://192.168.21.106/ppm/rest/v1/lookups/BLP_BLUEPRINTS/lookupValues",
+    "status": "http://192.168.21.106/ppm/rest/v1/lookups/INVESTMENT_OBJ_STATUS/lookupValues",
+    "chargeCode": "http://192.168.21.106/ppm/rest/v1/lookups/LOOKUP_CHARGE_CODES/lookupValues"
+  },
+  "laborExchangeRateType": {
+    "displayValue": "Average",
+    "_type": "lookup",
+    "id": "AVERAGE"
+  },
+  "etcLabor": 0,
+  "calcFinMetrics": true,
+  "isActive": true,
+  "breakevenDate": "2020-08-03T00:00:00",
+  "planBenefitTotal": null,
+  "overrideCostOfCapitalRate": 0,
+  "budgetBenefitFinishDate": null,
+  "statusComment": null,
+  "actualLabor": 0,
+  "budgetOperatingTotal": null,
+  "lastUpdatedBy": "Administrator, PPM",
+  "isRequired": false,
+  "preventUnassignedTask": false,
+  "resOBSUnit": null,
+  "estimatedStartDate": "2020-08-01T00:00:00",
+  "budgetBreakevenDate": null,
+  "totalLaborEffort": 0,
+  "planOperatingPercent": null,
+  "benefitDescription": null,
+  "materialCostMatrix": null,
+  "name": "Analytics for ConnectALL",
+  "alignment": null,
+  "chargeCode": null,
+  "targetManager": null,
+  "planPaybackPeriod": null,
+  "code": "CA-1",
+  "ideaPriority": {
+    "displayValue": "Medium",
+    "_type": "lookup",
+    "id": "2"
+  },
+  "description": "Analytics for ConnectALL",
+  "setPlanCostDates": false,
+  "laborCostMatrix": null,
+  "budgetBenefitTotal": null,
+  "overrideReinvestmentRate": 0,
+  "budgetROI": null,
+  "isSysCostOfCapital": true,
+  "isSysReinvRate": true,
+  "planCostFinishDate": null,
+  "planBenefitStartDate": null,
+  "planMIRR": null,
+  "scheduleFinish": "2020-08-25T11:51:54",
+  "budgetCostStart": null,
+  "entityId": null,
+  "blueprintId": null,
+  "assignmentPool": {
+    "displayValue": "Team Only",
+    "_type": "lookup",
+    "id": "0"
+  },
+  "expenseCostMatrix": null,
+  "expenseExchangeRateType": {
+    "displayValue": "Average",
+    "_type": "lookup",
+    "id": "AVERAGE"
+  },
+  "planCapitalTotal": null,
+  "budgetCostTotal": null,
+  "lastUpdatedDate": "2020-08-25T16:37:22",
+  "trackMode": {
+    "displayValue": "PPM",
+    "_type": "lookup",
+    "id": "2"
+  },
+  "risks": "risks",
+  "laborRateMatrix": null,
+  "createdBy": "Administrator, PPM",
+  "risk": null,
+  "investmentType": {
+    "displayValue": "Idea",
+    "_type": "lookup",
+    "id": "idea"
+  },
+  "budgetCapitalTotal": null,
+  "materialRateMatrix": null,
+  "budgetNPV": null
+}

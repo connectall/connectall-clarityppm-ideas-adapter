@@ -1,0 +1,19 @@
+[
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "fields": {
+        "id": "=toInteger"
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "fields": {
+        "id": "_internalId",
+        "*": "&"
+      }
+    }
+  }
+]
